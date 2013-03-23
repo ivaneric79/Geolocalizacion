@@ -2,9 +2,12 @@
 
 function inicio(){
 	document.addEventListener("deviceready",function(){
+		
+		var cords = coordenadas();
+		
 	//-25.363882,131.044922
-// var myLatlng = new google.maps.LatLng(coordenadas()['latitude'] ,coordenadas()['longitude']);
-var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+var myLatlng = new google.maps.LatLng(cords['latitude'] ,cords['longitude']);
+//var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   var mapOptions = {
     zoom: 4,
     center: myLatlng,
