@@ -31,8 +31,8 @@ function coordenadas(){
 	
 	var arr = [];
 	
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
-	alert('ok');
+	
+	
 	function onSuccess(position) {
 		alert('ok success');
 			arr['latitude'] =	position.coords.latitude; 
@@ -57,7 +57,7 @@ function coordenadas(){
 				  'message: ' + error.message + '\n');
 		}
 		
-		
+navigator.geolocation.getCurrentPosition(onSuccess, onError);		
 return arr;
 	
 	
