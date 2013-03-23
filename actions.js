@@ -4,9 +4,10 @@ function inicio(){
 	document.addEventListener("deviceready",function(){
 		
 		var cords = coordenadas();
+		alert(cords['latitude']);
 		
 	//-25.363882,131.044922
-var myLatlng = new google.maps.LatLng(cords['latitude'] ,cords['longitude']);
+var myLatlng = new google.maps.LatLng(cords['latitude'],cords['longitude']);
 //var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   var mapOptions = {
     zoom: 4,
