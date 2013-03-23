@@ -2,12 +2,11 @@
 
 function inicio(){
 	document.addEventListener("deviceready",function(){
-		
-		var cords = coordenadas();
-		alert(cords['latitude']);
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);	
+	function onSuccess(position) {
 		
 	//-25.363882,131.044922
-var myLatlng = new google.maps.LatLng(cords['latitude'],cords['longitude']);
+var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 //var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   var mapOptions = {
     zoom: 8,
@@ -21,13 +20,24 @@ var myLatlng = new google.maps.LatLng(cords['latitude'],cords['longitude']);
       map: map,
       title:"Hello World!"
   });
+  
+  };
+		
+		// onError Callback receives a PositionError object
+		//
+		function onError(error) {
+			alert('code: '    + error.code    + '\n' +
+				  'message: ' + error.message + '\n');
+		}
+  
+  
+  
 	},false);
   
 }
 
 
-function coordenadas(){
-	alert('Entre a coordenadas;');
+/*	alert('Entre a coordenadas;');
 	
 	var arr = [];
 	
@@ -47,7 +57,7 @@ function coordenadas(){
 				  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
 				  'Heading: '           + position.coords.heading           + '\n' +
 				  'Speed: '             + position.coords.speed             + '\n' +
-				  'Timestamp: '         + position.timestamp                + '\n');*/
+				  'Timestamp: '         + position.timestamp                + '\n');
 		};
 		
 		// onError Callback receives a PositionError object
@@ -62,4 +72,4 @@ return arr;
 	
 	
 	
-	}
+	}*/
