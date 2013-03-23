@@ -10,7 +10,7 @@ function inicio(){
 var myLatlng = new google.maps.LatLng(cords['latitude'],cords['longitude']);
 //var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   var mapOptions = {
-    zoom: 4,
+    zoom: 8,
     center: myLatlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
@@ -33,7 +33,8 @@ function coordenadas(){
 	
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	alert('ok');
-			var onSuccess = function(position) {
+	function onSuccess(position) {
+		alert('ok success');
 			arr['latitude'] =	position.coords.latitude; 
 			arr['longitude'] =	position.coords.longitude;
 				
