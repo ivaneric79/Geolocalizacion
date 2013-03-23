@@ -27,11 +27,12 @@ var myLatlng = new google.maps.LatLng(cords['latitude'],cords['longitude']);
 
 
 function coordenadas(){
+	alert('Entre a coordenadas;');
 	
 	var arr = [];
 	
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
-	
+	alert('ok');
 			var onSuccess = function(position) {
 			arr['latitude'] =	position.coords.latitude; 
 			arr['longitude'] =	position.coords.longitude;
